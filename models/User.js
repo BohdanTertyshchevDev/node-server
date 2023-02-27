@@ -23,6 +23,10 @@ class User {
         bd.set(this.id, this);
     }
 
+    updateUser(newData) {
+        bd.set(this.id, {...this, ...newData});
+    }
+
     static findOne(userId) {
         return bd.get(userId);
     }

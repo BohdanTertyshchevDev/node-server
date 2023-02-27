@@ -30,3 +30,10 @@ module.exports.deleteOneUser = (req, res) => {
     }
 }
 
+module.exports.updataUser = (req, res) => {
+    const {body, params: {userId}} = req;
+    const user = User.findOne(Number(userId));
+    user.updataUser(body);
+    res.send();
+}
+
