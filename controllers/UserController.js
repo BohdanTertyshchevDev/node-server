@@ -19,3 +19,14 @@ module.exports.getOneUser = (req, res) => {
     res.send(user);
 }
 
+module.exports.deleteOneUser = (req, res) => {
+    const {userId} = req.params;
+    const user = User.findOne(Number(userId));
+    if(user) {
+        user.deleteOneUser();
+        res.status(200).end();
+    } else {
+        res.status(404).end();
+    }
+}
+

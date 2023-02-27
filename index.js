@@ -10,6 +10,7 @@ const bodyParser = express.json();
 
 app.post('/user', bodyParser, validateUser, UserController.createUser);
 app.get('/user/:userId', UserController.getOneUser);
+app.get('/user/:userId', UserController.deleteOneUser);
 
 app.get('/users', UserController.getAllUsers);
 
