@@ -9,6 +9,8 @@ const bodyParser = express.json();
 
 
 app.post('/user', bodyParser, validateUser, UserController.createUser);
+app.get('/users', UserController.getAllUsers);
+
 
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);

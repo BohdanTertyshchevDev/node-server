@@ -1,4 +1,4 @@
-const User = require('./models/User');
+const User = require('../models/User.js');
 
 module.exports.createUser = (req, res) => {
     const {body} = req;
@@ -6,4 +6,9 @@ module.exports.createUser = (req, res) => {
     user.addUser();
     delete user.password;
     res.status(201).send(user);
+}
+
+module.exports.getAllUsers = (req, res) => {
+    const users = User.findAll();
+    res.send(users);
 }
