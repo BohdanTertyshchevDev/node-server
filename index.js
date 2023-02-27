@@ -9,7 +9,10 @@ const bodyParser = express.json();
 
 
 app.post('/user', bodyParser, validateUser, UserController.createUser);
+app.get('/user/:userId', UserController.getOneUser);
+
 app.get('/users', UserController.getAllUsers);
+
 
 
 app.listen(PORT, () => {
